@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canadian Hispanic–Latin American Virtual Museum</title>
+  <meta name="description" content="Explore history, culture, and community in a digital age." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Home hero only (other pages use <section class="hero ...">) */
+header.hero{
+  /* stack content vertically instead of side-by-side */
+  flex-direction: column;            /* overrides the Bootstrap row default */
+}
+
+/* Center the Launch button row */
+header.hero .interactive-launch{
+  display: flex;                     /* create a row for the button */
+  justify-content: center;           /* center horizontally */
+  width: 100%;
+  margin-top: clamp(14px, 2.6vw, 28px); /* a little space below the hero text */
+  position: relative;
+  z-index: 2;                        /* keep above any overlays */
+}
+
+/* Optional: make the ghost button pop on the hero */
+header.hero .interactive-launch .btn.ghost{
+  background: #fff;
+  color: #23272e;
+  border-color: rgba(255,255,255,.6);
+}
+  </style>
+</head>
+<body>
+
+    <!-- Skip link for a11y -->
+  <a class="skip" href="#main">Skip to content</a>
+
+ <!-- NAV -->
+  <header class="museum-nav" id="nav">
+    <div class="museum-nav-inner">
+      <div class="museum-left">
+        <button class="museum-menu-btn" id="menuBtn" aria-controls="menuOverlay" aria-expanded="false">
+          <span class="museum-burger" aria-hidden="true"></span>
+          <span class="museum-menu-label">Menu</span>
+        </button>
+      </div>
+      <a class="museum-brand" href="#" aria-label="Home">
+        <img src="assets/logo.png" alt="Canadian Hispanic-Latin American Virtual Museum logo" class="museum-logo">
+      </a>
+    </div>
+  </header>
+
+<!-- OVERLAY MENU -->
+<div class="museum-menu-overlay" id="menuOverlay" hidden>
+  <div class="museum-menu-content" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="museum-menu-close" id="menuClose" aria-label="Close menu">×</button>
+    <nav class="museum-menu-nav">
+
+      <a class="menu-section-title">About Us</a>
+      <div class="dropdown-menu">
+        <a href="history.html">History</a>
+        <a href="mission-vision.html">Mission/Vision</a>
+        <a href="press-room.html">Press Room</a>
+        <a href="team-members.html">Team Members</a>
+      </div>
+      
+      <a class="menu-section-title">Community In Action</a>
+      <div class="dropdown-menu">
+        <a href="#">Overview</a>
+        <a href="#">Canadian Hispanic Congress</a>
+        <a href="#">Statistics</a>
+        <a href="#">Civics</a>
+        <a href="#">Community Partners</a>
+        <a href="#">Current Issues</a>
+        <a href="#">Embassies and Consulates</a>
+      </div>
+      
+      <a class="menu-section-title">Digital Playground</a>
+      <div class="dropdown-menu">
+        <a href="#">Overview</a>
+        <a href="#">FIVARS</a>
+        <a href="#">Indie Game Reviewer</a>
+        <a href="#">Kaptain Leaf Adventures</a>
+        <a href="#">VRTO</a>
+      </div>
+      
+<a class="menu-section-title login" href="login.html">Login</a>
+
+      <div class="museum-menu-meta">
+        <div>Open Today 10:00–18:00</div>
+        <div>Montréal, QC</div>
+      </div>
+      </nav>
+    </div>
+  </div>
+
+  
+
+<!-- Navbar with language switch -->
+
+<main id="main">
+<!-- Hero -->
+<header class="hero d-flex align-items-center justify-content-center text-center text-white" style="background: url('assets/hero-img.png') center center / cover no-repeat;">
+  <div class="hero-content" data-aos="fade-up">
+    <h1 class="display-4 fw-bold">Canadian Hispanic–Latin American Virtual Museum</h1>
+    <p class="lead">Exploring history, culture, and community in a digital age.</p>
+
+    <!-- Launch button -->
+<div class="interactive-launch">
+  <a class="btn ghost" href="https://museum.chlavm.ca/#home-navpoint" target="_blank" rel="noopener">Launch Interactive Museum</a>
+</div>
+  </div>
+</header>
+
+<!-- Fullscreen overlay modal -->
+<div class="interactive-overlay" id="interactiveOverlay" hidden>
+  <div class="interactive-dialog" id="interactiveDialog" role="dialog" aria-modal="true" aria-labelledby="interactiveTitle" tabindex="-1">
+    <button class="interactive-close" id="interactiveClose" aria-label="Close">×</button>
+    <h2 id="interactiveTitle" class="sr-only">Interactive Museum</h2>
+    <div class="interactive-frame-wrap">
+      <!-- iframe is injected lazily by JS -->
+    </div>
+    <div class="orientation-hint" aria-hidden="true">Turn your phone to landscape for the best view</div>
+  </div>
+</div>
+
+<!-- Pillars -->
+<section id="pillars" class="bg-light-alt">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">Our Pillars</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/icon-culture.png" alt="" width="60" class="mb-3">
+        <h5>Cultural Preservation</h5>
+        <p>Safeguarding stories, artifacts, and heritage digitally.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <img src="assets/icon-accessibility.png" alt="" width="60" class="mb-3">
+        <h5>Accessibility</h5>
+        <p>Building inclusive, bilingual, and accessible museum spaces.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <img src="assets/icon-community.png" alt="" width="60" class="mb-3">
+        <h5>Community Engagement</h5>
+        <p>Celebrating diverse voices through programs and events.</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+        <img src="assets/icon-innovation.png" alt="" width="60" class="mb-3">
+        <h5>Innovation</h5>
+        <p>Leveraging technology to connect people to culture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Exhibits -->
+<section id="exhibits">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">Featured Exhibits</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card card-custom h-100">
+          <img src="assets/exhibit1.jpg" class="card-img-top" alt="Exhibit 1">
+          <div class="card-body">
+            <h5 class="card-title">Voices of Migration</h5>
+            <p class="card-text">Stories of resilience and adaptation across generations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card card-custom h-100">
+          <img src="assets/exhibit2.jpg" class="card-img-top" alt="Exhibit 2">
+          <div class="card-body">
+            <h5 class="card-title">Art & Identity</h5>
+            <p class="card-text">Exploring the role of art in shaping cultural identity.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card card-custom h-100">
+          <img src="assets/exhibit3.jpg" class="card-img-top" alt="Exhibit 3">
+          <div class="card-body">
+            <h5 class="card-title">Digital Heritage</h5>
+            <p class="card-text">Preserving artifacts and archives in virtual spaces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section id="community" class="bg-light-alt">
+  <div class="container text-center">
+    <h2 class="mb-5" data-aos="fade-up">Community Spotlight</h2>
+    <p class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
+      Highlighting voices, projects, and events from across Canada’s Hispanic–Latin American communities.
+    </p>
+    <div class="row g-4 mt-4">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="assets/community1.jpg" class="img-fluid rounded" alt="Community project">
+      </div>
+      <div class="col-md-6 d-flex align-items-center" data-aos="fade-left">
+        <blockquote class="blockquote">
+          <p>“This museum brings our history to life and gives us a platform to share our culture with the world.”</p>
+          <footer class="blockquote-footer">Community Member</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container text-center">
+    <h2 class="mb-4" data-aos="fade-up">Sign Up For Our Newsletter</h2>
+    <form class="col-lg-6 mx-auto" data-aos="fade-up" data-aos-delay="200">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Your Name">
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" placeholder="Your Email">
+      </div>
+      <button type="submit" class="btn btn-dark w-100">Send</button>
+    </form>
+  </div>
+</section>
+</main>
+
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About</h5>
+          <ul class="list-unstyled">
+            <li><a href="history.html">History</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team-members.html">Team</a></li>
+            <li><a href="press-room.html">Press Room</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="#board">Board</a></li>
+            <li><a href="#curators">Curators</a></li>
+            <li><a href="#support">Support</a></li>
+          </ul>
+        </div>
+   <div class="col-md-4 mb-3 text-md-end">
+  <h5>Follow Us</h5>
+  <div class="f-social" role="list">
+    <a href="https://facebook.com/yourhandle" target="_blank" rel="noopener" aria-label="Facebook" role="listitem">
+      <!-- Facebook -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4H14V7a1 1 0 0 1 1-1h3V2z"/>
+      </svg>
+    </a>
+
+    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" aria-label="X (Twitter)" role="listitem">
+      <!-- X / Twitter -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4l16 16M20 4L4 20"/>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram" role="listitem">
+      <!-- Instagram -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="3.8"/>
+        <circle cx="17" cy="7" r="1"/>
+      </svg>
+    </a>
+
+    <a href="https://youtube.com/@yourhandle" target="_blank" rel="noopener" aria-label="YouTube" role="listitem">
+      <!-- YouTube -->
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2.5" y="6.5" width="19" height="11" rx="3"/>
+        <path d="M10 9.5l5 3-5 3" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+      <hr class="my-3">
+      <p class="text-center mb-0">© 2025 CH-LA Virtual Museum. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+<script>
+  // Navbar scroll effect
+const topbar = document.getElementById('nav'); // the header
+window.addEventListener('scroll', () => {
+  topbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+  // Init AOS
+  AOS.init();
+</script>
+<script>
+(() => {
+  const openBtn   = document.getElementById('openInteractive');
+  const overlay   = document.getElementById('interactiveOverlay');
+  const dialog    = document.getElementById('interactiveDialog');
+  const closeBtn  = document.getElementById('interactiveClose');
+  const wrap      = document.querySelector('.interactive-frame-wrap');
+
+  if (!openBtn || !overlay || !dialog || !closeBtn || !wrap) return;
+
+  let frame = null;
+  let lastActive = null;
+
+  function createFrame() {
+    if (frame) return frame;
+    frame = document.createElement('iframe');
+    frame.title = 'CHLAVM Interactive';
+    frame.allowFullscreen = true;
+    // Allow common XR/cam/mic/fullscreen perms; browser will ignore unsupported items
+    frame.setAttribute('allow', 'xr-spatial-tracking; fullscreen; camera; microphone; autoplay');
+    frame.src = 'https://museum.chlavm.ca/#home-navpoint';
+    wrap.appendChild(frame);
+    return frame;
+  }
+
+  // Focus trap
+  function trapTab(e){
+    if (e.key !== 'Tab') return;
+    const f = [...dialog.querySelectorAll('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])')];
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function open() {
+    lastActive = document.activeElement;
+    createFrame();
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    dialog.addEventListener('keydown', trapTab);
+    // move focus inside
+    closeBtn.focus();
+  }
+
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    dialog.removeEventListener('keydown', trapTab);
+    // keep iframe mounted so users can resume; uncomment to unload:
+    // if (frame) { frame.remove(); frame = null; }
+    if (lastActive) lastActive.focus();
+  }
+
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  window.addEventListener('keydown', (e) => { if (!overlay.hidden && e.key === 'Escape') close(); });
+})();
+</script>
+
+</body>
+</html>

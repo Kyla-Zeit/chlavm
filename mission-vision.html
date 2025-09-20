@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission & Vision – Canadian Hispanic–Latin American Virtual Museum</title>
+  <meta name="description" content="Our mission, vision, and values—the principles guiding the Canadian Hispanic–Latin American Virtual Museum." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-only polish -->
+  <style>
+    /* Page hero image */
+    .page-hero .hero-bg{
+      object-position:center 48%;
+    }
+
+    /* Section intro */
+    .mv-lede{
+      text-align:center;
+      max-width:820px;
+      margin:2rem auto 0;
+      font-size:1.12rem;
+      color:var(--muted);
+    }
+
+    /* Mission/Vision cards */
+    .mv-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:22px;
+      margin:28px 0 10px;
+    }
+    @media (min-width: 820px){
+      .mv-grid{ grid-template-columns:1fr 1fr; }
+    }
+    .mv-card{
+      background:#fff;
+      border:1px solid #eef4fa;
+      border-radius:16px;
+      padding:22px 22px 20px;
+      box-shadow:0 8px 26px rgba(38,66,108,.08);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .mv-card:hover{ transform:translateY(-2px); box-shadow:0 14px 40px rgba(38,66,108,.12); }
+    .mv-card h3{
+      font-family:"Playfair Display",serif;
+      color:var(--brand-2);
+      margin-bottom:.35rem;
+      font-size:1.5rem;
+    }
+    .mv-card p{ color:#2a3240; margin:0; }
+
+    /* Value badges */
+    .mv-values{
+      display:flex; flex-wrap:wrap; gap:.6rem;
+      justify-content:center;
+      margin-top:1.1rem;
+    }
+    .mv-value{
+      border:1.5px solid var(--line);
+      background:var(--bg-elev);
+      border-radius:999px;
+      padding:.55rem .95rem;
+      font-weight:600;
+      color:#41576b;
+      white-space:nowrap;
+    }
+
+    /* Stats row */
+    .mv-stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:24px;
+    }
+    @media (min-width: 860px){
+      .mv-stats{ grid-template-columns:repeat(4,1fr); }
+    }
+    .mv-stat{
+      background:linear-gradient(180deg,#fff, #f7fbff);
+      border:1px solid #eaf2f9;
+      border-radius:14px;
+      padding:18px 16px;
+      text-align:center;
+      box-shadow:0 4px 18px rgba(38,66,108,.07);
+    }
+    .mv-stat strong{
+      display:block;
+      font-size:1.7rem;
+      color:var(--brand);
+      line-height:1.15;
+    }
+    .mv-stat span{ color:#567089; font-size:.98rem; }
+
+    /* Call to action */
+    .mv-cta{
+      margin-top:40px;
+      background:linear-gradient(93deg,#fff 78%,#f4f9fc 100%);
+      border:1px solid #e9f1f7;
+      border-radius:16px;
+      padding:26px 22px;
+      text-align:center;
+      box-shadow:0 10px 36px rgba(38,66,108,.08);
+    }
+    .mv-cta p{ color:var(--muted); margin:.5rem 0 1.1rem; }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="museum-nav" id="nav">
+    <div class="museum-nav-inner">
+      <div class="museum-left">
+        <button class="museum-menu-btn" id="menuBtn" aria-controls="menuOverlay" aria-expanded="false">
+          <span class="museum-burger" aria-hidden="true"></span>
+          <span class="museum-menu-label">Menu</span>
+        </button>
+      </div>
+      <a class="museum-brand" href="index.html" aria-label="Home">
+        <img src="assets/logo.png" alt="Canadian Hispanic-Latin American Virtual Museum logo" class="museum-logo">
+      </a>
+    </div>
+  </header>
+
+  <!-- OVERLAY MENU -->
+  <div class="museum-menu-overlay" id="menuOverlay" hidden>
+    <div class="museum-menu-content" role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="museum-menu-close" id="menuClose" aria-label="Close menu">×</button>
+      <nav class="museum-menu-nav">
+        <a class="menu-section-title">About Us</a>
+        <div class="dropdown-menu">
+          <a href="history.html">History</a>
+          <a href="mission-vision.html" aria-current="page">Mission/Vision</a>
+          <a href="press-room.html">Press Room</a>
+          <a href="team-members.html">Team Members</a>
+        </div>
+        <a class="menu-section-title">Community In Action</a>
+        <div class="dropdown-menu">
+          <a href="#">Overview</a>
+          <a href="#">Canadian Hispanic Congress</a>
+          <a href="#">Statistics</a>
+          <a href="#">Civics</a>
+          <a href="#">Community Partners</a>
+          <a href="#">Current Issues</a>
+          <a href="#">Embassies and Consulates</a>
+        </div>
+        <a class="menu-section-title">Digital Playground</a>
+        <div class="dropdown-menu">
+          <a href="#">Overview</a>
+          <a href="#">FIVARS</a>
+          <a href="#">Indie Game Reviewer</a>
+          <a href="#">Kaptain Leaf Adventures</a>
+          <a href="#">VRTO</a>
+        </div>
+        <a class="menu-section-title login" href="login.html">Login</a>
+        <div class="museum-menu-meta">
+          <div>Open Today 10:00–18:00</div>
+          <div>Montréal, QC</div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero page-hero" aria-label="Mission & Vision hero image">
+    <div class="hero-media">
+      <!-- swap this image when you have a final -->
+      <img src="assets/mission-vision/mission-vision.png" alt="Abstract collage representing culture, access, and innovation" class="hero-bg" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-inner">
+      <h1 data-aos="fade-up">Mission & Vision</h1>
+      <p class="hero-lead" data-aos="fade-up" data-aos-delay="120">
+        Why we exist, where we’re going, and the values guiding every exhibit, partnership, and story we share.
+      </p>
+      <div class="hero-ctas" data-aos="fade-up" data-aos-delay="240">
+        <a class="btn" href="#mission">Read Our Mission</a>
+        <a class="btn ghost" href="#values">Our Values</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="about">
+      <div class="container narrow">
+
+        <p class="mv-lede" data-aos="fade-up">
+          The Canadian Hispanic–Latin American Virtual Museum (CHLAVM) is a national digital platform that preserves,
+          amplifies, and celebrates the living legacy of Hispanic–Latin American communities across Canada.
+        </p>
+
+        <!-- Mission + Vision -->
+        <div class="mv-grid" id="mission">
+          <article class="mv-card" data-aos="fade-up">
+            <h3>Our Mission</h3>
+            <p>
+              To preserve and activate Hispanic–Latin American culture in Canada through inclusive, bilingual,
+              and accessible digital experiences—connecting people, ideas, and histories across generations.
+            </p>
+            <div class="mv-values" aria-label="Mission focus areas">
+              <span class="mv-value">Preservation</span>
+              <span class="mv-value">Education</span>
+              <span class="mv-value">Accessibility</span>
+            </div>
+          </article>
+
+          <article class="mv-card" data-aos="fade-up" data-aos-delay="120">
+            <h3>Our Vision</h3>
+            <p>
+              A vibrant, national museum without walls where communities lead the storytelling,
+              technology expands what’s possible, and everyone can see themselves reflected in culture.
+            </p>
+            <div class="mv-values" aria-label="Vision themes">
+              <span class="mv-value">Community-led</span>
+              <span class="mv-value">Innovation</span>
+              <span class="mv-value">Belonging</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Values row -->
+        <h2 id="values" data-aos="fade-up" style="margin-top:56px;">Our Core Values</h2>
+        <div class="mv-values" data-aos="fade-up" data-aos-delay="120">
+          <span class="mv-value">Respect</span>
+          <span class="mv-value">Representation</span>
+          <span class="mv-value">Co-creation</span>
+          <span class="mv-value">Open Access</span>
+          <span class="mv-value">Care for Community</span>
+        </div>
+
+        <!-- Stats / highlights -->
+        <div class="mv-stats" data-aos="fade-up" data-aos-delay="220" style="margin-bottom:12px;">
+          <div class="mv-stat"><strong>100% Digital</strong><span>Accessible anywhere</span></div>
+          <div class="mv-stat"><strong>Bilingual</strong><span>English & Spanish</span></div>
+          <div class="mv-stat"><strong>Nationwide</strong><span>Community partners</span></div>
+          <div class="mv-stat"><strong>Open to All</strong><span>Free to explore</span></div>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="highlight-quote" data-aos="fade-up" style="margin-top:30px;">
+          <span class="quote-bar"></span>
+          <p>
+            “We’re building a museum that belongs to the community—alive, bilingual, and
+            powered by the stories people choose to tell.”
+            <br><span class="small" style="color:#8399b4;">— CHLAVM Leadership</span>
+          </p>
+        </blockquote>
+
+        <!-- CTA -->
+        <div class="mv-cta" data-aos="fade-up">
+          <h3 class="mb-1" style="font-family:'Playfair Display',serif; color:var(--brand-2);">Work With Us</h3>
+          <p>Are you an artist, educator, or community organizer? Let’s build something meaningful together.</p>
+          <a class="btn" href="team-members.html#support">Meet the Team</a>
+          <a class="btn ghost" href="#contact" style="margin-left:.6rem;">Get in Touch</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About</h5>
+          <ul class="list-unstyled">
+            <li><a href="history.html">History</a></li>
+            <li><a href="mission-vision.html" aria-current="page">Mission & Vision</a></li>
+            <li><a href="team-members.html">Team</a></li>
+            <li><a href="press-room.html">Press Room</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html#exhibits">Exhibits</a></li>
+            <li><a href="index.html#pillars">Our Pillars</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 text-md-end">
+          <h5>Follow Us</h5>
+          <div class="f-social" role="list">
+            <a href="https://facebook.com/yourhandle" target="_blank" rel="noopener" aria-label="Facebook" role="listitem">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4H14V7a1 1 0 0 1 1-1h3V2z"/></svg>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" aria-label="X (Twitter)" role="listitem">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            </a>
+            <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram" role="listitem">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r="1"/></svg>
+            </a>
+            <a href="https://youtube.com/@yourhandle" target="_blank" rel="noopener" aria-label="YouTube" role="listitem">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="3"/><path d="M10 9.5l5 3-5 3" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3">
+      <p class="text-center mb-0">© 2025 CH-LA Virtual Museum. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Navbar scroll effect
+    const topbar = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      topbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // AOS
+    AOS.init({ duration: 750, once: true, offset: 80, easing: 'cubic-bezier(.18,.62,.35,1)' });
+  </script>
+</body>
+</html>
