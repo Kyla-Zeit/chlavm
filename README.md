@@ -34,4 +34,4 @@ canadian-hispanic-latin-american-virtual-museum/
 
 ## 🌐 Deployment
 Deployed using **GitHub Pages**.  
-Access it here → [https://kyla-zeit.github.io/nature-canada/](https://kyla-zeit.github.io/chlavm)
+Access it here → [https://kyla-zeit.github.io/chlavm]
